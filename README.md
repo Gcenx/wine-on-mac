@@ -6,7 +6,7 @@ As this question keeps appearing more recently I'm making this basic guide.
 Prerequisites:
 - Install [XQuartz 2.7.7](https://www.xquartz.org/releases/index.html) or above
 - [Gatekeeper must allow block unsigned packages](https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave)
-- Running OS X 10.8 to macOS 10.14* ([macOS Catalina](https://github.com/Gcenx/wine-on-mac#I'm-running-macOS-Catalina-how-do-I-use-wine))
+- Running OS X 10.8 to macOS 10.14* ([macOS Catalina]https://github.com/Gcenx/wine-on-mac#im-running-macos-catalina-how-do-i-use-wine))
 
 Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine-devel` is recommended, but most agree it's best to use the latest `wine-staging` due to additinal patches.
 If your intention is to have a more stable envirument use `wine-stable`
