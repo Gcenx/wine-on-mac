@@ -5,7 +5,7 @@ As this question keeps appearing more recently I'm making this basic guide.
 &NewLine;
 </br>
 </br>
-### How to install wine on mac using Winehq releases;
+### How to manually install wine on mac using Winehq releases;
 Prerequisites:
 - Install [XQuartz 2.7.7](https://www.xquartz.org/releases/index.html) or above
 - [Gatekeeper must allow block unsigned packages](https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave)
@@ -76,3 +76,9 @@ However there are some free options but all require SIP to be disabled
 brew tap gcenx/wine && brew cask install wine-crossover
 ```
 Alternatively Phoenicis has a build for [WineCX19.0.0](https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/PlayOnLinux-winecx-19.0.0-cx-darwin-x86on64.tar.gz) but the PlayOnMac GUI currently doesn't function and dylibs aren't mapped correctly that needs to be done manually
+&NewLine;
+&NewLine;
+</br>
+</br>
+## How to build wine from source;
+Might add later
