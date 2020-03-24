@@ -76,6 +76,9 @@ However there are some free options but all require SIP to be disabled
 brew tap gcenx/wine && brew cask install wine-crossover
 ```
 Alternatively Phoenicis has a build for [WineCX19.0.0](https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/PlayOnLinux-winecx-19.0.0-cx-darwin-x86on64.tar.gz) but the PlayOnMac GUI currently doesn't function and dylibs aren't mapped correctly that needs to be done manually
+
+__Please Note__
+`wine32on64` currently does not support 16Bit executable so some things just won't work 
 &NewLine;
 &NewLine;
 </br>
