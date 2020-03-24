@@ -27,6 +27,37 @@ The above is the __Winehq__ way to install wine on mac but that makes it cumbers
 &NewLine;
 </br>
 </br>
+## Wine basics
+The default `WINEPREFIX` will be `~/.wine` so anything you install will be place into the hidden `~/.wine` folder.
+You can override this by using the `WINEPREFIX` command
+
+The default archuterture of a `WINEPREFIX` will be 64Bit meaning 32Bit and 64Bit applications & games are suppoted but thats not always ideal for several reasons.
+A new `WINEPREFIX` can be created and also setting `WINEARCH`
+
+Here is an example of using both commands to create a 32Bit only `WINEPREFIX`
+
+```
+WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
+```
+The above command will create a new `WINEPREFIX` thats also 32Bit only and launch `winecfg`
+
+#### Basic wine tools
+- wine (32Bit loader)
+- wine64 (64Bit loader)
+- msiexec (execute msi files
+- notepad
+- regedit (Wines Registory editor)
+- regsvr32 (Provides DLL registration services)
+- wineboot
+- winecfg (wine configuration utility)
+- wineconsole (windows like shell aka cmd)
+- winedbg (wine debug utility)
+- winefile (wine file manager)
+- winemine (wines version of the game mine)
+- winepath
+&NewLine;
+</br>
+
 ## What's this winetricks everyone keeps saying to use?
 *Winetricks is an easy way to work around problems in Wine.*
 
