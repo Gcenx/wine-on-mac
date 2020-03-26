@@ -5,7 +5,7 @@ As this question keeps appearing more recently I'm making this basic guide.
 &NewLine;
 </br>
 </br>
-Prerequisites:
+__Prerequisites:__
 - Install [XQuartz 2.7.7](https://www.xquartz.org/releases/index.html) or above
 - [Gatekeeper must allow block unsigned packages](https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave)
 - Running OS X 10.8 to macOS 10.14* ([macOS Catalina](https://github.com/Gcenx/wine-on-mac#im-running-macos-catalina-how-do-i-use-wine))
@@ -61,7 +61,7 @@ The above command will create a new `WINEPREFIX` thats also 32Bit only and launc
 ## What's this winetricks everyone keeps saying to use?
 *Winetricks is an easy way to work around problems in Wine.*
 
-While this can be installed directly from [GitHub](https://github.com/Winetricks/winetricks) you will be missing common packages required to make use to winetricks instead install again using `homebrew`
+While this can be installed directly from [GitHub](https://github.com/Winetricks/winetricks) you will be missing common packages required to make use of `inetricks` instead install again using `homebrew`
 ```
 brew install winetricks
 ```
@@ -96,14 +96,22 @@ Not currently, wine on mac can only function on wine64 using MoltenVK running 10
 The short answer is you don't.
 Currently only CrossOver-19 and above function on macOS Catalina.
 
-However there are some free options but all require SIP to be disabled
+However there are some free alternatives;
 - [Unofficial Wineskin](https://github.com/Gcenx/WineskinServer/releases) Use a WS11 Engine
 - [PortingKit](http://portingkit.com/) Should automatically select a working Engine
 - My brew tap 
 ```
 brew tap gcenx/wine && brew cask install wine-crossover
 ```
-Alternatively Phoenicis has a build for [WineCX19.0.0](https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/PlayOnLinux-winecx-19.0.0-cx-darwin-x86on64.tar.gz) but the PlayOnMac GUI currently doesn't function and dylibs aren't mapped correctly that needs to be done manually
+All require changing security settings from Recovery Mode
+macOS Catalina 10.15.4 can use the following;
+```
+nvram boot-args="no32exec=0"
+```
+This will allow `wine32on64` to change the state of `i386_set_ldt`
+macOS Catalian 10.15.3 and below SIP needs to be disabled
+
+Phoenicis has a build of [WineCX19.0.0](https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/PlayOnLinux-winecx-19.0.0-cx-darwin-x86on64.tar.gz) but the PlayOnMac GUI currently doesn't function and dylibs aren't mapped correctly this needs to be done manually
 
 __Please Note__
 `wine32on64` currently does not support 16Bit executable so some things just won't work 
@@ -112,4 +120,6 @@ __Please Note__
 </br>
 </br>
 ## How to build wine from source;
-Might add later
+TODO
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/gcenx?locale.x=en_US)
