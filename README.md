@@ -16,11 +16,13 @@ Once homebrew is installed you the following command to install your selected wi
 ```
 brew cask install xquartz wine-staging
 ```
-The above command will install `XQuartz` and the most recent `wine-staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.
+The above command will install `XQuartz` and the most recent `wine-staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.  
+__Please Note__  
+Only a single wine package can be installed using `brew`
 
 ### How to manually install wine on mac using Winehq releases;
-Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine-devel` is recommended, but most agree it's best to use the latest `wine-staging` due to additinal patches.
-If your intention is to have a more stable envirument use `wine-stable`
+Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine-devel` is recommended, but most agree it's best to use the latest `wine-staging` due to additional patches.
+If your intention is to have a more stable environment use `wine-stable`
 
 The above is the __Winehq__ way to install wine on mac but that makes it cumbersome to use considering you must launch the `Wine Stable`, `Wine Devel` or `Wine Staging` app each time to get access to wine within `Terminal`
 &NewLine;
@@ -28,10 +30,10 @@ The above is the __Winehq__ way to install wine on mac but that makes it cumbers
 </br>
 </br>
 ## Wine basics
-The default `WINEPREFIX` will be `~/.wine` so anything you install will be place into the hidden `~/.wine` folder.
+The default `WINEPREFIX` will be `~/.wine` so anything you install will be placed into the hidden `~/.wine` folder.
 You can override this by using the `WINEPREFIX` command
 
-The default archuterture of a `WINEPREFIX` will be 64Bit meaning 32Bit and 64Bit applications & games are suppoted but thats not always ideal for several reasons.
+The default architecture of a `WINEPREFIX` will be 64Bit meaning 32Bit and 64Bit applications & games are supported but that's not always ideal for several reasons.
 A new `WINEPREFIX` can be created and also setting `WINEARCH`
 
 Here is an example of using both commands to create a 32Bit only `WINEPREFIX`
@@ -46,7 +48,7 @@ The above command will create a new `WINEPREFIX` thats also 32Bit only and launc
 - wine64 (64Bit loader)
 - msiexec (execute msi files
 - notepad
-- regedit (Wines Registory editor)
+- regedit (Wines Registry editor)
 - regsvr32 (Provides DLL registration services)
 - wineboot
 - winecfg (wine configuration utility)
@@ -61,7 +63,7 @@ The above command will create a new `WINEPREFIX` thats also 32Bit only and launc
 ## What's this winetricks everyone keeps saying to use?
 *Winetricks is an easy way to work around problems in Wine.*
 
-While this can be installed directly from [GitHub](https://github.com/Winetricks/winetricks) you will be missing common packages required to make use of `inetricks` instead install again using `homebrew`
+While `winetricks` *can* be installed directly from [GitHub](https://github.com/Winetricks/winetricks) you will be missing packages `winetricks` requires, instead install again using `homebrew`
 ```
 brew install winetricks
 ```
@@ -87,7 +89,9 @@ This usually happens when the game uses DirectX10 or above, the version of OpenG
 </br>
 </br>
 ## Can I use DXVK on mac?
-Not currently, wine on mac can only function on wine64 using MoltenVK running 10.11 and above, currently it's missing required Vulkan extensions to support DXVK so for now it's not possible, also Winehq builds aren't built with MoltenVK support.
+No not currently.  
+`MoltenVK` is currently Vulkan 1.0 compliant, without additional extensions needed by DXVK, newer versions of DXVK require Vulkan 1.1.  
+`MoltenVK` uses Metal meaning only `wine64` has Vulkan support (currently `wine32on64` doesn't support MoltenVK).
 &NewLine;
 &NewLine;
 </br>
@@ -120,6 +124,10 @@ __Please Note__
 </br>
 </br>
 ## How to build wine from source;
-TODO
-
+*__TODO__*
+&NewLine;
+&NewLine;
+</br>
+</br>
+Found this information helpful?  
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/gcenx?locale.x=en_US)
