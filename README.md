@@ -123,6 +123,16 @@ __Please Note__
 &NewLine;
 </br>
 </br>
+## Usinf wine in a Virtual Machine
+From Wine-4.15 macDriver (default display driver) no longer functions within a Virtual Machine, however using X11 for the display driver works.\
+You can edit the wine registry manually or use winetricks
+```
+winetricks -q macdriver=x11
+```
+&NewLine;
+&NewLine;
+</br>
+</br>
 ## How to build wine from source;
 *__TODO__*
 &NewLine;
