@@ -20,6 +20,19 @@ The above command will install `XQuartz` and the most recent `wine-staging` pkg 
 __Please Note__  
 Only a single wine package can be installed using `brew`
 
+Winehq is currently not providing recent packages for macOS so I decided to upload my own builds,
+
+```
+brew tap gcenx/wine
+brew cask gcenx-wine-staging
+```
+This command will add my brew tap and the second command will install my custom cask of `Wine Staging`
+#### The tap contains the following
+- `gcenx-wine-stable`
+- `gcenx-wine-devel`
+- `gcenx-wine-staging`
+- `wine-crossover`
+
 ### How to manually install wine on mac using Winehq releases;
 Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine-devel` is recommended, but most agree it's best to use the latest `wine-staging` due to additional patches.
 If your intention is to have a more stable environment use `wine-stable`
