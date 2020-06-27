@@ -14,17 +14,19 @@ __Prerequisites:__
 Installing wine using [homebrew](https://docs.brew.sh/Installation)
 Once homebrew is installed you the following command to install your selected wine package
 ```
-brew cask install xquartz wine-staging
+brew cask install xquartz
+brew cask install --no-quarantine wine-staging
 ```
 The above command will install `XQuartz` and the most recent `wine-staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.  
 __Please Note__  
-Only a single wine package can be installed using `brew`
+Only a single wine package can be installed using `brew`\
+The `--no-quarantine` command is required as homebrew by default adds the quarantine flag to downloaded casks, this causes Gatekeeper to treat the bundle as damaged.
 
 Winehq is currently not providing recent packages for macOS so I decided to upload my own builds,
 
 ```
 brew tap gcenx/wine
-brew cask gcenx-wine-staging
+brew cask install --no-quarantine gcenx-wine-staging
 ```
 This command will add my brew tap and the second command will install my custom cask of `Wine Staging`
 #### The tap contains the following
