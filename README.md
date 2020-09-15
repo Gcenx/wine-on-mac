@@ -144,6 +144,21 @@ You can edit the wine registry manually or use winetricks
 ```
 winetricks -q macdriver=x11
 ```
+
+*__Please Note;__*
+macDriver was regression is now resolved from Wine-5.17
+&NewLine;
+&NewLine;
+</br>
+</br>
+## Wine-5.9 to Wine-5.18 file limit regression;
+
+```
+wineserver ran out of file handles, and the code in ntdll was missing a macos specific quirk...
+
+```
+The upstream patch was applied to my recently uploaded Wine-5.17 packages\
+The most commonly noticed issues was wine-gecko was always crashing.
 &NewLine;
 &NewLine;
 </br>
