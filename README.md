@@ -88,11 +88,11 @@ Now you will also have access to `winetricks` command within `Terminal`
 </br>
 </br>
 ## Why doesn't __Virtual Desktop__ work?
-By default wine on mac uses what's known as *mac driver* using `winetricks`  run the following command
+By default wine on mac uses what's known as *macDriver* using `winetricks`  run the following command
 ```
 winetricks macdriver=x11
 ```
-This will swap from `mad driver` to `x11` now wine will make use of `XQuartz` 
+This will swap from `macDriver` to `x11` now wine will make use of `XQuartz` 
 &NewLine;
 &NewLine;
 </br>
@@ -142,7 +142,7 @@ __Please Note__
 From Wine-4.15 macDriver (default display driver) no longer functions within a Virtual Machine, however using X11 for the display driver works.\
 You can edit the wine registry manually or use winetricks
 ```
-winetricks -q macdriver=x11
+winetricks macdriver=x11
 ```
 
 *__Please Note;__*
@@ -155,7 +155,6 @@ macDriver was regression is now resolved from Wine-5.17
 
 ```
 wineserver ran out of file handles, and the code in ntdll was missing a macos specific quirk...
-
 ```
 The upstream patch was applied to my recently uploaded Wine-5.17 packages\
 The most commonly noticed issues was wine-gecko was always crashing.
