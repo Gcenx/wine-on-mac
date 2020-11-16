@@ -128,7 +128,7 @@ macOS Catalina 10.15.4 can use the following;
 nvram boot-args="no32exec=0"
 ```
 This will allow `wine32on64` to change the state of `i386_set_ldt`
-macOS Catalian 10.15.3 and below SIP needs to be disabled
+macOS Catalina 10.15.3 and below SIP needs to be disabled
 
 Phoenicis has a build of [WineCX19.0.0](https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/PlayOnLinux-winecx-19.0.0-cx-darwin-x86on64.tar.gz) but the PlayOnMac GUI currently doesn't function and dylibs aren't mapped correctly this needs to be done manually
 
