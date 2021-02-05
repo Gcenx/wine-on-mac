@@ -99,7 +99,7 @@ No not currently.
 *__Please Note;__*  
 CrossOver-20 does include DXVK support, this provides DirectX10 and DirectX11 support. CodeWeavers patched MoltenVK to fake unsupported extensions and a custom version of DXVK that's modified specifically for macOS.
 
-## macOS Catalina/macOS Big Sur, how do I use wine?
+## macOS Catalina and later
 Currently only CrossOver-19 and later will run
 
 #### Here are some free alternatives;
