@@ -3,7 +3,6 @@
 As this question keeps appearing more recently I'm making this basic guide.
 
 #### Prerequisites;  
-- Install [XQuartz 2.7.7](https://www.xquartz.org/releases/index.html) or above
 - [Gatekeeper must allow block unsigned packages](https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave)
 - Running OS X 10.8 to macOS 10.14* ([macOS Catalina & later](https://github.com/Gcenx/wine-on-mac/blob/master/README.md#macos-catalina-and-later))
 
@@ -12,32 +11,19 @@ Installing wine using [homebrew](https://docs.brew.sh/Installation)
 Once homebrew is installed you the following command to install your selected wine package
 
 ```
-brew install --cask xquartz
 brew tap homebrew/cask-versions
 brew install --cask --no-quarantine wine-staging
 ```
-The above command will install `XQuartz` and the most recent `wine-staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.
+The above command will install the most recent `wine-staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.
   
 __Please Note;__  
 Only a single wine package can be installed using `brew`  
 The `--no-quarantine` command is required as homebrew by default adds the quarantine flag to downloaded casks, this causes Gatekeeper to treat the bundle as damaged.
 
-Winehq is currently not providing recent packages for macOS so I decided to upload my own builds.
-
-```
-brew tap gcenx/wine
-brew install --cask --no-quarantine gcenx-wine-staging
-```
-This command will add my brew tap and the second command will install my custom cask of `Wine Staging`
-#### The tap contains the following
-- `gcenx-wine-stable`
-- `gcenx-wine-devel`
-- `gcenx-wine-staging`
-- `wine-crossover`
-
 ### How to manually install wine on mac using Winehq releases;
 Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine-devel` is recommended, but most agree it's best to use the latest `wine-staging` due to additional patches.  
-If your intention is to have a more stable environment use `wine-stable`
+If your intention is to have a more stable environment use `wine-stable`\
+_Currenty WIP macOS packages are not uploaded to Winehq, those can be downloaded from [here](https://github.com/Gcenx/macOS_Wine_builds/releases)_
 
 The above is the __Winehq__ way to install wine on mac but that makes it cumbersome to use considering you must launch the `Wine Stable`, `Wine Devel` or `Wine Staging` app each time to get access to wine within `Terminal`
 
@@ -80,14 +66,6 @@ brew install winetricks
 ```
 Now you will also have access to `winetricks` command within `Terminal`
 
-## Why doesn't __Virtual Desktop__ work?
-By default wine on mac uses what's known as *macDriver* using `winetricks`  run the following command
-
-```
-winetricks macdriver=x11
-```
-This will swap from `macDriver` to `x11` now wine will make use of `XQuartz` 
-
 ## Why doesn't my game work on mac but Winehq says it does?
 This usually happens when the game uses DirectX10 or above, the version of OpenGL included on macOS hasn't been updated in years so it's missing some needed extensions.
 
@@ -97,41 +75,36 @@ No not currently.
 `MoltenVK` uses Metal meaning only `wine64` has Vulkan support (currently `wine32on64` doesn't support MoltenVK).
 
 *__Please Note;__*  
-CrossOver-20 does include DXVK support, this provides DirectX10 and DirectX11 support. CodeWeavers patched MoltenVK to fake unsupported extensions and a custom version of DXVK that's modified specifically for macOS.
+CrossOver-20 and later include DXVK support, this provides DirectX10 and DirectX11 support. CodeWeavers patched MoltenVK to fake unsupported extensions and a custom version of DXVK that's modified specifically for macOS.
 
 ## macOS Catalina and later
-Currently only CrossOver-19 and later will run
+Currently only CrossOver-19 and later suppot 32Bit on 64Bit only versions of macOS.
 
 #### Here are some free alternatives;
  - [Unofficial Wineskin](https://github.com/Gcenx/WineskinServer/releases) Use a WS11 Engine
  - [PortingKit](http://portingkit.com/) Should automatically select a working Engine
- - My brew tap 
+ - My brew tap
 
+Install the lastest `wine-crossover` package I provide from my brew tap;
 ```
-brew tap gcenx/wine && brew install --cask --no-quarantine wine-crossover
+brew install --no-quarantine gcenx/wine/wine-crossover
 ```
 
 Gatekeeper will give a warning for each Windows binary that is ran as these won't be code-signed in a way Apple expects, to avoid this you could disabled Gatekeeper using the following command
-
 ```
 sudo spctl --master-disable
 ```
 *__Please Note;__*  
-macOS Catalina 10.15.0 to 10.15.3, [SIP](https://support.apple.com/en-us/HT204899) needs to be disabled this will allow `wine32on64` to change the state of `i386_set_ldt`
-
-My current wine-crossover package can be downloaded directly [WineCX19.02](https://github.com/Gcenx/homebrew-wine/releases/download/19.0.2/wine-crossover-19.0.2-osx64.tar.7z)\
-Phoenicis has a build of [WineCX19.0.0](https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/PlayOnLinux-winecx-19.0.0-cx-darwin-x86on64.tar.gz)
+macOS Catalina 10.15.0 to 10.15.3, [SIP](https://support.apple.com/en-us/HT204899) needs to be disabled this will allow `wine32on64` to change the state of `i386_set_ldt`\
+The current `wine-crossover` package can be downloaded directly [WineCX20.02](https://github.com/Gcenx/homebrew-wine/releases/download/20.0.2/wine-crossover-20.0.2-osx64.tar.7z)
 
 __Also;__  
-`wine32on64` currently does not support 16Bit executable so some things just won't work 
+`wine32on64` does not support 16Bit executables so somethings just won't work 
 
 ## Apple Silicon support?
-Only CrossOver-20.0.2 includes support for Apple Silicon at this time, this requires macOS Big Sur 11.1 and install Rosetta2.  
-I will be adding support for Apple Silicon into [Wineskin](https://github.com/Gcenx/WineskinServer) once I'm able to obtain an M1 Mac mini, currently checking where would be the best place to purchase from.
+Only CrossOver-20.0.2 includes 32Bit support for Apple Silicon at this time, this requires macOS Big Sur 11.1 and Rosetta2 installed.\
+Wine-6.0.1/Wine-6.1 only support 64Bit Windows Binaries at this time.
 
-## Using wine in a macOS Virtual Machine
-From Wine-4.15 to Wine-5.16 macDriver (the default display driver) won't function within a Virtual Machine, however the X11 display driver works.\
-You can edit the wine registry manually or use winetricks
 ```
 winetricks macdriver=x11
 ```
