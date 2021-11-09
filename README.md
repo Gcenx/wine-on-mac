@@ -105,20 +105,6 @@ __Also;__
 Only CrossOver-20.0.2 includes 32Bit support for Apple Silicon at this time, this requires macOS Big Sur 11.1 and Rosetta2 installed.\
 Wine-6.0.1/Wine-6.1 only support 64Bit Windows Binaries at this time.
 
-```
-winetricks macdriver=x11
-```
-
-*__Please Note;__*
-The macDriver regression was resolved from Wine-5.17
-
-## Wine-5.9 to Wine-5.18 file limit regression;
-```
-wineserver ran out of file handles, and the code in ntdll was missing a macos specific quirk...
-```
-The upstream patch was applied to my recently uploaded Wine-5.17 packages\
-The most commonly noticed issues was wine-gecko was always crashing.
-
 ## How to build wine from source;
 *__TODO__*
 &NewLine;
