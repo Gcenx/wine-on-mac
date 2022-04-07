@@ -70,12 +70,15 @@ Now you will also have access to `winetricks` command within `Terminal`
 This usually happens when the game uses DirectX10 or above, the version of OpenGL included on macOS hasn't been updated in years so it's missing some needed extensions.
 
 ## Can I use DXVK on mac?
-No not currently.  
-`MoltenVK` is Vulkan 1.1 compliant, but still missing additional extensions needed by DXVK.  
-`MoltenVK` uses Metal meaning only `wine64` has Vulkan support (currently `wine32on64` doesn't support MoltenVK).
+Yes & no. MoltenVK supports Vulkan 1.1 core features so that's enought to to run some 64Bit (Apples Metal API is 64Bit) DirectX 10 & DirectX 11 games.\
+Upstream DXVK won't work on macOS as additional modifications are required.
 
-*__Please Note;__*  
-CrossOver-20 and later include DXVK support, this provides DirectX10 and DirectX11 support. CodeWeavers patched MoltenVK to fake unsupported extensions and a custom version of DXVK that's modified specifically for macOS.
+*__Note;__*  
+CrossOver-20 and later include DXVK support, this provides 64Bit DirectX 10 and DirectX 11 support. CodeWeavers patched MoltenVK to fake unsupported extensions along with a custom version of DXVK that was modified specifically for macOS.
+
+## macOS Sierra and below
+While upstream wine _does_ support OS X 10.8 and later the provided packages target macOS High Sierra and later.\
+To get modern wine on legacy versions of macOS you'll need to make use of [macports-wine](https://github.com/Gcenx/macports-wine)
 
 ## macOS Catalina and later
 Currently only CrossOver-19 and later suppot 32Bit on 64Bit only versions of macOS.
