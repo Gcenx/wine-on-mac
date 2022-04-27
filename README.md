@@ -23,7 +23,7 @@ The `--no-quarantine` command is required as homebrew by default adds the quaran
 ### How to manually install wine on mac using Winehq releases;
 Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine-devel` is recommended, but most agree it's best to use the latest `wine-staging` due to additional patches.  
 If your intention is to have a more stable environment use `wine-stable`\
-_Currenty WIP macOS packages are not uploaded to Winehq, those can be downloaded from [here](https://github.com/Gcenx/macOS_Wine_builds/releases)_
+_Currenty macOS packages are not uploaded to Winehq, those can be downloaded from [here](https://github.com/Gcenx/macOS_Wine_builds/releases)_
 
 The above is the __Winehq__ way to install wine on mac but that makes it cumbersome to use considering you must launch the `Wine Stable`, `Wine Devel` or `Wine Staging` app each time to get access to wine within `Terminal`
 
@@ -41,10 +41,12 @@ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
 ```
 The above command will create a new `WINEPREFIX` thats also 32Bit only and launch `winecfg`
 
-#### Basic wine tools
+#### wine binaries
 - wine (32Bit loader)
 - wine64 (64Bit loader)
-- msiexec (execute msi files
+- wineserver (daemon process)
+#### shell wrappers
+- msiexec (execute msi files)
 - notepad
 - regedit (Wines Registry editor)
 - regsvr32 (Provides DLL registration services)
@@ -75,6 +77,12 @@ Upstream DXVK won't work on macOS as additional modifications are required.
 
 *__Note;__*  
 CrossOver-20 and later include DXVK support, this provides 64Bit DirectX 10 and DirectX 11 support. CodeWeavers patched MoltenVK to fake unsupported extensions along with a custom version of DXVK that was modified specifically for macOS.
+
+## DXVK-macOS
+[DXVK-macOS](https://github.com/Gcenx/DXVK-macOS) provides custom DXVK packages with macOS in mind, those packages **don't** require a modified version of MoltenVK.
+
+*__Note;__*  
+While I've provided DXVK-async packages there are **not** recommended, upstream DXVK had removed this feature after reports of possible bans related to anti-cheat systems.
 
 ## macOS Sierra and below
 While upstream wine _does_ support OS X 10.8 and later the provided packages target macOS High Sierra and later.\
