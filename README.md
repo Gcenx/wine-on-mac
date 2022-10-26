@@ -116,9 +116,30 @@ __Also;__
 Only CrossOver-20.0.2 includes 32Bit support for Apple Silicon at this time, this requires macOS Big Sur 11.1 and Rosetta2 installed.\
 Wine-6.0.1/Wine-6.1 only support 64Bit Windows Binaries at this time.
 
+<br>
+
 ## How to build wine from source;
-*__TODO__*
-&NewLine;
-&NewLine;
-</br>
-</br>
+
+##### Build dependencies
+```
+bison \
+cctools \
+flex \
+gettext \
+ld64 \
+mingw-w64 \
+pkgconfig
+```
+
+##### Runtime dependencies
+```
+freetype \
+gnutls \
+gstreamer \
+gst-plugins-base \
+gst-plugins-good \
+gst-libav \
+libpcap \
+libsdl2 \
+openal-soft
+```
