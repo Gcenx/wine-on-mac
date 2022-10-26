@@ -98,7 +98,7 @@ Currently only CrossOver-19 and later suppot 32Bit on 64Bit only versions of mac
 
 Install the lastest `wine-crossover` package I provide from my brew tap;
 ```
-brew install --no-quarantine gcenx/wine/wine-crossover
+brew install --cask --no-quarantine gcenx/wine/wine-crossover
 ```
 
 Gatekeeper will give a warning for each Windows binary that is ran as these won't be code-signed in a way Apple expects, to avoid this you could disabled Gatekeeper using the following command
