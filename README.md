@@ -143,3 +143,57 @@ libpcap \
 libsdl2 \
 openal-soft
 ```
+
+##### Runtime dependencies (wine64)
+```
+MoltenVK 
+```
+
+##### Default configure options to set
+```
+--disable-option-checking \
+--disable-tests \
+--without-alsa \
+--without-capi \
+--with-coreaudio \
+--with-cups \
+--without-dbus \
+--without-fontconfig \
+--with-freetype \
+--with-gettext \
+--without-gettextpo \
+--without-gphoto \
+--with-gnutls \
+--without-gssapi \
+--with-gstreamer \
+--without-inotify \
+--without-krb5 \
+--with-ldap \
+--with-mingw \
+--without-netapi \
+--with-openal \
+--with-opencl \
+--with-opengl \
+--without-oss \
+--with-pcap \
+--with-pthread \
+--without-pulse \
+--without-sane \
+--with-sdl \
+--without-udev \
+--with-unwind \
+--without-usb \
+--without-v4l2 \
+--without-x
+```
+
+##### wine64 additional configure options
+```
+--enable-win64 \
+--with-vulkan
+```
+
+##### wine additional configure options
+```
+--without-vulkan
+```
