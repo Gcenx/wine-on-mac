@@ -116,9 +116,87 @@ __Also;__
 Only CrossOver-20.0.2 includes 32Bit support for Apple Silicon at this time, this requires macOS Big Sur 11.1 and Rosetta2 installed.\
 Wine-6.0.1/Wine-6.1 only support 64Bit Windows Binaries at this time.
 
+<br>
+
 ## How to build wine from source;
-*__TODO__*
-&NewLine;
-&NewLine;
-</br>
-</br>
+
+##### Build dependencies
+```
+bison \
+cctools \
+flex \
+gettext \
+ld64 \
+mingw-w64 \
+pkgconfig
+```
+
+##### Runtime dependencies
+```
+freetype \
+gnutls \
+gstreamer \
+gst-plugins-base \
+gst-plugins-good \
+gst-libav \
+libpcap \
+libsdl2
+```
+
+##### Runtime dependencies (wine64)
+```
+MoltenVK 
+```
+
+##### Help wine find libraries (built setting)
+```
+export LDFLAGS="-Wl,-headerpad_max_install_names -Wl,-rpath,@loader_path/../../ -Wl,-rpath,/opt/local/lib -Wl,-rpath,/opt/X11/lib"
+```
+
+##### Default configure options to set
+```
+--disable-option-checking \
+--disable-tests \
+--without-alsa \
+--without-capi \
+--with-coreaudio \
+--with-cups \
+--without-dbus \
+--without-fontconfig \
+--with-freetype \
+--with-gettext \
+--without-gettextpo \
+--without-gphoto \
+--with-gnutls \
+--without-gssapi \
+--with-gstreamer \
+--without-inotify \
+--without-krb5 \
+--with-ldap \
+--with-mingw \
+--without-netapi \
+--with-opencl \
+--with-opengl \
+--without-oss \
+--with-pcap \
+--with-pthread \
+--without-pulse \
+--without-sane \
+--with-sdl \
+--without-udev \
+--with-unwind \
+--without-usb \
+--without-v4l2 \
+--without-x
+```
+
+##### wine64 additional configure options
+```
+--enable-win64 \
+--with-vulkan
+```
+
+##### wine additional configure options
+```
+--without-vulkan
+```
