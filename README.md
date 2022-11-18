@@ -140,8 +140,7 @@ gst-plugins-base \
 gst-plugins-good \
 gst-libav \
 libpcap \
-libsdl2 \
-openal-soft
+libsdl2
 ```
 
 ##### Runtime dependencies (wine64)
@@ -171,7 +170,6 @@ MoltenVK
 --with-ldap \
 --with-mingw \
 --without-netapi \
---with-openal \
 --with-opencl \
 --with-opengl \
 --without-oss \
