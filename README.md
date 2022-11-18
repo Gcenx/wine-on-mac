@@ -148,6 +148,11 @@ libsdl2
 MoltenVK 
 ```
 
+##### Help wine find libraries (built setting)
+```
+export LDFLAGS="-Wl,-headerpad_max_install_names -Wl,-rpath,@loader_path/../../ -Wl,-rpath,/opt/local/lib -Wl,-rpath,/opt/X11/lib"
+```
+
 ##### Default configure options to set
 ```
 --disable-option-checking \
