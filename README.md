@@ -4,7 +4,7 @@ As this question keeps appearing more recently I'm making this basic guide.
 
 #### Prerequisites;  
 - [Gatekeeper must allow block unsigned packages](https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave)
-- Running OS X 10.8 to macOS 10.14* ([macOS Catalina & later](https://github.com/Gcenx/wine-on-mac/blob/master/README.md#macos-catalina-and-later))
+- Running macOS 10.15 and later
 
 ## Recommended way to install Winehq packages;
 Installing wine using [homebrew](https://docs.brew.sh/Installation)
