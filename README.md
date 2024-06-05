@@ -11,17 +11,16 @@ Installing wine using [homebrew](https://docs.brew.sh/Installation)
 Once homebrew is installed you the following command to install your selected wine package
 
 ```
-brew tap homebrew/cask-versions
-brew install --cask --no-quarantine wine-staging
+brew install --cask --no-quarantine wine@staging
 ```
-The above command will install the most recent `wine-staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.
+The above command will install the most recent `wine@staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.
   
 __Please Note;__  
 Only a single wine package can be installed using `brew`  
 The `--no-quarantine` command is required as homebrew by default adds the quarantine flag to downloaded casks, this causes Gatekeeper to treat the bundle as damaged.
 
 ### How to manually install wine on mac using Winehq releases;
-Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine-devel` is recommended, but most agree it's best to use the latest `wine-staging` due to additional patches.  
+Grab a [wine package](https://dl.winehq.org/wine-builds/macosx/download.html) usually using the latest `wine@devel` is recommended, but most agree it's best to use the latest `wine@staging` due to additional patches.  
 If your intention is to have a more stable environment use `wine-stable`\
 _Currenty macOS packages are not uploaded to Winehq, those can be downloaded from [here](https://github.com/Gcenx/macOS_Wine_builds/releases)_
 
@@ -34,16 +33,8 @@ You can override this by using the `WINEPREFIX` command
 The default architecture of a `WINEPREFIX` will be 64Bit meaning 32Bit and 64Bit applications & games are supported but that's not always ideal for several reasons.
 A new `WINEPREFIX` can be created and also setting `WINEARCH`
 
-Here is an example of using both commands to create a 32Bit only `WINEPREFIX`
-
-```
-WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
-```
-The above command will create a new `WINEPREFIX` thats also 32Bit only and launch `winecfg`
-
 #### wine binaries
-- wine (32Bit loader)
-- wine64 (64Bit loader)
+- wine (64Bit loader)
 - wineserver (daemon process)
 #### shell wrappers
 - msiexec (execute msi files)
@@ -84,12 +75,8 @@ CrossOver-20 and later include DXVK support, this provides 64Bit DirectX 10 and 
 *__Note;__*  
 While I've provided DXVK-async packages there are **not** recommended, upstream DXVK had removed this feature after reports of possible bans related to anti-cheat systems.
 
-## macOS Sierra and below
-While upstream wine _does_ support OS X 10.8 and later the provided packages target macOS High Sierra and later.\
-To get modern wine on legacy versions of macOS you'll need to make use of [macports-wine](https://github.com/Gcenx/macports-wine)
-
 ## macOS Catalina and later
-Currently only CrossOver-19 and later suppot 32Bit on 64Bit only versions of macOS.
+Currently wine-9.x and CrossOver suppot 32Bit on 64Bit only versions of macOS.
 
 #### Here are some free alternatives;
  - [Unofficial Wineskin](https://github.com/Gcenx/WineskinServer/releases) Use a WS11 Engine
