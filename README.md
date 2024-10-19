@@ -79,8 +79,9 @@ While I've provided DXVK-async packages there are **not** recommended, upstream 
 Currently wine-9.x and CrossOver suppot 32Bit on 64Bit only versions of macOS.
 
 #### Here are some free alternatives;
- - [Unofficial Wineskin](https://github.com/Gcenx/WineskinServer/releases) Use a WS11 Engine
+ - [Kegworks](https://github.com/Kegworks-App?view_as=public) Use a WS12 Engine
  - [PortingKit](http://portingkit.com/) Should automatically select a working Engine
+ - [Whisky](https://getwhisky.app/) requires Apple Silicon mac running macos Sonoma
  - My brew tap
 
 Install the lastest `wine-crossover` package I provide from my brew tap;
