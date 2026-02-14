@@ -11,7 +11,7 @@ Installing wine using [homebrew](https://docs.brew.sh/Installation)
 Once homebrew is installed you the following command to install your selected wine package
 
 ```
-brew install --cask --no-quarantine wine@staging
+brew install --cask wine@staging
 ```
 The above command will install the most recent `wine@staging` pkg available on winehq but it will also add `wine` for use in `Terminal` meaning you no longer need to launch the installed __Wine Staging__ app each time you want to access wine.
   
@@ -79,14 +79,13 @@ While I've provided DXVK-async packages there are **not** recommended, upstream 
 Currently wine-9.x and CrossOver suppot 32Bit on 64Bit only versions of macOS.
 
 #### Here are some free alternatives;
- - [Kegworks](https://github.com/Kegworks-App?view_as=public) Use a WS12 Engine
+ - [Sikarugir](https://github.com/Sikarugir-App?view_as=public) Use a WS12 Engine
  - [PortingKit](http://portingkit.com/) Should automatically select a working Engine
- - [Whisky](https://getwhisky.app/) requires Apple Silicon mac running macos Sonoma
  - My brew tap
 
 Install the lastest `wine-crossover` package I provide from my brew tap;
 ```
-brew install --cask --no-quarantine gcenx/wine/wine-crossover
+brew install --cask gcenx/wine/wine-crossover
 ```
 
 Gatekeeper will give a warning for each Windows binary that is ran as these won't be code-signed in a way Apple expects, to avoid this you could disabled Gatekeeper using the following command
